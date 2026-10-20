@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         // 4. Button click placeholder (We will build the Add Screen next!)
         fabAddItem.setOnClickListener(v -> {
-            Toast.makeText(this, "Add screen coming next!", Toast.LENGTH_SHORT).show();
+            android.content.Intent intent = new android.content.Intent(MainActivity.this, AddEditItemActivity.class);
+            startActivity(intent);
         });
     }
 

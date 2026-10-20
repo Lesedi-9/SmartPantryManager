@@ -139,14 +139,6 @@ public abstract class AppDatabase extends RoomDatabase {
                 dao.insertRecipeIngredient(new RecipeIngredient((int)id15, "bread", 2, "slices"));
                 dao.insertRecipeIngredient(new RecipeIngredient((int)id15, "avocado", 1, "piece"));
 
-                // 16. Beef Stew
-                long id16 = dao.insertRecipe(new Recipe("Beef Stew", "1. Brown beef in a pot. 2. Add chopped veggies. 3. Pour in broth and simmer for 1 hour."));
-                dao.insertRecipeIngredient(new RecipeIngredient((int)id16, "beef", 500, "g"));
-                dao.insertRecipeIngredient(new RecipeIngredient((int)id16, "potato", 3, "piece"));
-                dao.insertRecipeIngredient(new RecipeIngredient((int)id16, "carrot", 2, "piece"));
-                dao.insertRecipeIngredient(new RecipeIngredient((int)id16, "onion", 1, "piece"));
-                dao.insertRecipeIngredient(new RecipeIngredient((int)id16, "beef broth", 500, "ml"));
-
             });
         }
     };
