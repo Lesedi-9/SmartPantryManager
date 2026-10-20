@@ -20,4 +20,7 @@ public interface PantryItemDao {
 
     @Query("SELECT * FROM pantry_items ORDER BY name ASC")
     List<PantryItem> getAllItems();
+
+    @Query("SELECT * FROM pantry_items WHERE id = :id")
+    PantryItem getItemById(int id);
 }

@@ -40,10 +40,17 @@ public class MainActivity extends AppCompatActivity {
         adapter = new PantryAdapter();
         recyclerView.setAdapter(adapter);
 
-        // 3. Initialize Database
+        // 3. Listen for clicks on pantry items
+        adapter.setOnItemClickListener(item -> {
+            android.content.Intent intent = new android.content.Intent(MainActivity.this, AddEditItemActivity.class);
+            intent.putExtra("item_id", item.id); // Pass the ID to the next screen
+            startActivity(intent);
+        });
+
+        // 4. Initialize Database
         database = AppDatabase.getDatabase(this);
 
-        // 4. Button click placeholder (We will build the Add Screen next!)
+        // 5. Button click placeholder (We will build the Add Screen next!)
         fabAddItem.setOnClickListener(v -> {
             android.content.Intent intent = new android.content.Intent(MainActivity.this, AddEditItemActivity.class);
             startActivity(intent);
