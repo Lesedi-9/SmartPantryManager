@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set up the Toolbar
+        com.google.android.material.appbar.MaterialToolbar toolbar = findViewById(R.id.toolbarMain);
+        setSupportActionBar(toolbar);
+
         // 1. Initialize views
         recyclerView = findViewById(R.id.recyclerViewPantry);
         tvEmptyPantry = findViewById(R.id.tvEmptyPantry);
@@ -83,5 +87,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        if (item.getItemId() == R.id.action_suggestions) {
+            startActivity(new android.content.Intent(this, SuggestedRecipesActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
