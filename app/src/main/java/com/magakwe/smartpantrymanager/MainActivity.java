@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -33,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
         // Set up the Toolbar
         com.google.android.material.appbar.MaterialToolbar toolbar = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbar);
+
+        toolbar.inflateMenu(R.menu.menu_main);
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.action_suggestions) {
+                startActivity(new Intent(MainActivity.this, SuggestedRecipesActivity.class));
+                return true;
+            } else if (item.getItemId() == R.id.action_settings) {
+                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                return true;
+            }
+            return false;
+        });
 
         // 1. Initialize views
         recyclerView = findViewById(R.id.recyclerViewPantry);
