@@ -28,6 +28,8 @@
 
         <activity android:name=".SuggestedRecipesActivity" />
 
+        <activity android:name=".RecipeDetailActivity" />
+
     </application>
 
 </manifest>

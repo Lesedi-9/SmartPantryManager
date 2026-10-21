@@ -37,6 +37,12 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
         adapter = new RecipeAdapter();
         recyclerView.setAdapter(adapter);
 
+        adapter.setOnRecipeClickListener(recipe -> {
+            android.content.Intent intent = new android.content.Intent(this, RecipeDetailActivity.class);
+            intent.putExtra("recipe_id", recipe.id);
+            startActivity(intent);
+        });
+
         database = AppDatabase.getDatabase(this);
         findMatches();
     }
