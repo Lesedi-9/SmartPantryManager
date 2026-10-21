@@ -32,5 +32,5 @@ Java, making it the most reliable choice for a local inventory system.
 5. The database will automatically seed itself with 20 recipes on the very first launch.
 
 ## Author
-**Lesedi**
+**Lesedi Magakwe 402311859**
 Mobile App Development 700
